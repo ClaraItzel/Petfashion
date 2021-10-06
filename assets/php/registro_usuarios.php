@@ -11,7 +11,7 @@ $telefono = $_POST["telefono"];
 $rfc = $_POST["rfc"];
 $password = $_POST["password"];
 //Se encripto la contraseña 
-$password_encriptada= hash('md5', $password);
+$password_encriptada= MD5($password);
 
     $query="INSERT INTO usuarios(id,nombre, prim_ape, seg_ape,correo,direccion,telefono,rfc,password)
             VALUES('','$nombre','$prim_ape','$seg_ape','$correo','$direccion','$telefono','$rfc','$password_encriptada')";
