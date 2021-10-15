@@ -135,7 +135,7 @@
         if ($filas >= 1) {
         while ($lafila = $myconsulta->fetch_assoc()) {
       ?>
-          <div class="col-3">
+          <div class="col-4">
                 <div class="card">
                     <img height="300"
                     title="<?php echo $lafila["nombre"]; ?>" 
@@ -147,8 +147,8 @@
                     data-content="<?php echo $lafila['descripcion']; ?>"
                     >
                     <div class="card-body">
-                        <span><?php echo $lafila['nombre']; ?></span>
-                        <h5 class="card-title">$<?php echo $lafila['precio_venta']; ?></h5>
+                        <h5><span><?php echo $lafila['nombre']; ?></span></h5>
+                        <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
                         <!--<p class="card-text">Descripcion</p>-->
                   
                     <button class="btn btn-primary" 
