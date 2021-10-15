@@ -69,21 +69,21 @@ a:hover{
 }
 /* Slider */
 .slide1{
-background-image: url(/assets/img/s-1.jpg);
+background-image: url(assets/img/s-1);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
 background-position: top center;
 }
 .slide2{
-background-image: url(/assets/img/s-2.jpg);
+background-image: url(assets/img/s-2.jpg);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
 background-position: top center;
 }
 .slide3{
-background-image: url(/assets/img/s-3.jpg);
+background-image: url(assets/img/s-3.jpg);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
@@ -264,7 +264,8 @@ transition: all 300ms;;
 }
 /*Login*/
 .body{
-    background-image: url(/assets/img/pexels-tina-nord-7324407.jpg);    background-size: cover;
+    background-image: url(/assets/img/pexels-tina-nord-7324407.jpg);    
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;

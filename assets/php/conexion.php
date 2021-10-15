@@ -1,6 +1,6 @@
 <?php
 
-    $conexion = mysqli_connect("localhost", "root", "", "facturacion");
+    $conexion = mysqli_connect("localhost", "root", "", "petfashion");
 
 /*     if($conexion){
         echo 'Conectado exitosamente a la BD';

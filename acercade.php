@@ -21,8 +21,8 @@
     <title>PetsFasion</title>
   </head>
   <body>
-  <header>
-    <nav class="fixed-top navbar navbar-expand-sm navbar-dark bg-dark">
+    <header>
+        <nav class="fixed-top navbar navbar-expand-sm navbar-dark bg-dark">
         <img src="assets/img/huella.png" alt="" height="40px" style=" margin: 10px">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
           </ul>
           
         </div>
-    </nav>
+        </nav>
       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -92,111 +92,107 @@
     <div class="espacio" id="QuienesSomos">
 
     </div>
-  
+
     <div class="container" id="QuienesSomos" >
-      <section class="mb-4">
-        <h2 class="center mt-2 mb-2" id="QuienesSomos">¿Quienes somos?</h2>
-        <div class="nosotros">
-          <div class="nosotros__imagen">
-          <img src="assets/img/cat-g71bc39663_1280.png" alt="">
-          </div>
-          <div class="text">
-      
-            <p>El mejor aliado de tu mejor amigo <br>
-              Somos una empresa comercializadora de los mejores productos para hacer notar a tus mascotas. <br>
-              Te ofrecemos la más surtida variedad de ropa, correas, accesorios y todo lo que buscas para el cuidado y bienestar de las estrellas de la casa.</p> <br>
-        <p> <strong>Descubre más información de nosotros </strong>  <a href="acercade.php"> aquí</a></p>
-          </div>
+        <section class="mb-4">
+            <h2 class="center mt-2 mb-2" id="QuienesSomos">¿Quienes somos?</h2> <br>
+            <div class="nosotros">
+            <div class="nosotros__imagen">
+            <img src="assets/img/cat-g71bc39663_1280.png" alt="">
+            </div>
+            <div class="text">
         
-      </section>
-        </div>
-        <img src="assets/img/wave.svg" id="tienda" alt="">
-        <section >
-        <div class="articulos" id="tienda">
-          <h2 class="center titulo mb-4">Compra por categorias</h2>
-          <div class="art_tarjetas container">
-            <div class="art1__perro art_tar-p">
-              <div class="imagen__perro">
-                <div class="capa">
-                  <h3 class="blanco">Perros</h3>
-                  <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
-                </div>
-              </div>
+                <p>El mejor aliado de tu mejor amigo  <br>
+                Somos una empresa comercializadora de los mejores productos para hacer notar a tus mascotas. <br>
+                Te ofrecemos la más surtida variedad de ropa, correas, accesorios y todo lo que buscas para el cuidado y bienestar de las estrellas de la casa.</p> <br>
+            
             </div>
-            <div class="art1__perro"> 
-              <div class="imagen__gato">
-                <div class="capa">
-                  <h3 class="blanco">Gatos</h3>
-                  <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
-                </div>
-              </div>
-            </div>
-            <div class="art1__perro">
-              <div class="imagen__otros">
-                <div class="capa">
-                  <h3 class="blanco">Otros</h3>
-                  <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
-                </div>
-            </div>
-          </div>
-          </div>
-        </div>
-        <img src="assets/img/wave2.svg" alt="">
-      </section>
-        <section class="container nosotros cuenta mb-4">
-          <div >
-            <h2>Forma parte de esta gran comunidad</h2>
-          <p>¿Por qué hacer una cuenta?
-            <br>
-            Registrate en nuestra plataforma!!
-            <br>
-            Cuando te registras en nuestro sitio, tu navegación y compras serán más faciles
-            <br>
-            Facturación rápida y sin errores
-            <br>
-            Envíos personalizados
-            <br>
-            Sugerencias especiales</p>
-          <a href="login.php" class="btn mt-4">Crear cuenta</a>
-          </div>
-          <div class="nosotros__imagen">
-            <img src="assets/img/conejos.jpg" alt="">
-          </div>
+            
         </section>
-        
     </div>
-        <footer>
-          <div class="footer">
-            <div class="mx-5 mt-5 grid">
-              <div class="foot__imagen">
-                <img src="assets/img/huella.png" height="80px" alt="">
-                <h3 class="mt-4 ml-3 blanco">PetsFasion</h3>
-              </div>
-              <div class="redes">
-                <div class="redes__titulo center">
-                  <h5 class="blanco">Síguenos en:</h5>
-                </div>
-                <div class="redes__imagenes">
-                  <img src="assets/img/facebook.png" class="mr-4" height="40px" alt="">
-                  <img src="assets/img/linkedin.png" class="mr-4" height="40px" alt="">
-                  <img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
-                  <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
-                </div>
-               
-              </div>
-              
-              <div class="terminos mt-4 ">
+    
+    <div class="container" id="" >
+        <section class="mb-4">
+            <h2 class="center mt-2 mb-2" id="">Nuestra fundadora</h2> <br>
+            <div class="nosotros">
+            <div class="nosotros__imagen">
+            <img src="assets/img/clara.jfif" alt="">
+            </div>
+            <div class="text">
+                <h4>Clara Gómez</h4>
+                <p>Una persona comprometida con el trato digno de los animales y la tranquilidad de los dueños. <br>
+                    Activista en pro de los derechos de los animales y su protección, el principal objetivo de la fundadora es 
+                    distribuir productos de calidad para las mascotas, teniendo como prioridad el bienestar y comodidad de los animales,
+                    pues se dió cuenta de que muchas empresas comercializan productos de baja calidad sin importar las consecuencias que
+                     les traen a la salud de nuestras mascotas, es por ello que en 2015 se comprometió en la creación de esta empresa donde 
+                     además de consentir y hacer lucir a nuestras mascotas, podemos tener la seguridad de que estos productos no comprometen 
+                     el bienestar de nuestros pequeños peludos, si ellos se sienten bien, los dueños nos sentiremos seguros y en paz con 
+                     nuestras especies. </p>
+            </div>
+            
+        </section>
+    </div>
+    <div class="container">
+      <h2 class="center mt-2 mb-2" id="">Nuestros colaboradores</h2> <br>
+      <div class="row">
+        <?php
+          include "assets/php/conexion.php";
+          $myconsulta = $conexion->query("select * from colaboradores");
+          $filas = $myconsulta->num_rows;
+          if ($filas >= 1) {
+          while ($lafila = $myconsulta->fetch_assoc()) {
+        ?>
+            <div class="col-4">
+                  <div class="card">
+                      <img height="300"
+                      title="<?php echo $lafila["nombre"]; ?>" 
+                      alt="<?php echo $lafila['nombre']; ?>"
+                      class="card-img-top" 
+                      src="<?php echo $lafila['foto']; ?>"
+                      >
+                      <div class="card-body">
+                          <h4><?php echo $lafila['nombre']. " " . $lafila['prim_ape']; ?></h4>
+                          <h5 class="card-title"><?php echo $lafila['cargo']; ?></h5>
+                          <p><?php echo $lafila['presentacion']; ?></p>
+                      
+                      </div>
+                  </div>
+            </div>
+            <?php
+              } //fin del while
+          }
+          ?>
+      </div>
+    </div>
+      
+    <footer>
+        <div class="footer">
+        <div class="mx-5 mt-5 grid">
+            <div class="foot__imagen">
+            <img src="assets/img/huella.png" height="80px" alt="">
+            <h3 class="mt-4 ml-3 blanco">PetsFasion</h3>
+            </div>
+            <div class="redes">
+            <div class="redes__titulo center">
+                <h5 class="blanco">Síguenos en:</h5>
+            </div>
+            <div class="redes__imagenes">
+                <img src="assets/img/facebook.png" class="mr-4" height="40px" alt="">
+                <img src="assets/img/linkedin.png" class="mr-4" height="40px" alt="">
+                <img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
+                <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
+            </div>
+            </div>
+            
+            <div class="terminos mt-4 ">
             <a href="archivos/condiciones_compra.pdf" > <p class="footer-enlaces mb-4">Condiciones de compra y verificación </p> </a>
             <a href="archivos/politicas_de_privacidad.pdf" class="footer-enlaces mb-5"> <p class="footer-enlaces"> Aviso legal y
                 políticas de privacidad</p></a>
             </div>
             </div>
-            
-          </div>
-        </footer>
+        
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 

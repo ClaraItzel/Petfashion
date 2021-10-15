@@ -89,28 +89,8 @@
       </div>
   </header>
     
-    <div class="espacio" id="QuienesSomos">
-
-    </div>
-  
-    <div class="container" id="QuienesSomos" >
-      <section class="mb-4">
-        <h2 class="center mt-2 mb-2" id="QuienesSomos">¿Quienes somos?</h2>
-        <div class="nosotros">
-          <div class="nosotros__imagen">
-          <img src="assets/img/cat-g71bc39663_1280.png" alt="">
-          </div>
-          <div class="text">
-      
-            <p>El mejor aliado de tu mejor amigo <br>
-              Somos una empresa comercializadora de los mejores productos para hacer notar a tus mascotas. <br>
-              Te ofrecemos la más surtida variedad de ropa, correas, accesorios y todo lo que buscas para el cuidado y bienestar de las estrellas de la casa.</p> <br>
-        <p> <strong>Descubre más información de nosotros </strong>  <a href="acercade.php"> aquí</a></p>
-          </div>
-        
-      </section>
-        </div>
-        <img src="assets/img/wave.svg" id="tienda" alt="">
+    
+  <img src="assets/img/wave.svg" id="tienda" alt="">
         <section >
         <div class="articulos" id="tienda">
           <h2 class="center titulo mb-4">Compra por categorias</h2>
@@ -145,29 +125,47 @@
           </div>
         </div>
         <img src="assets/img/wave2.svg" alt="">
-      </section>
-        <section class="container nosotros cuenta mb-4">
-          <div >
-            <h2>Forma parte de esta gran comunidad</h2>
-          <p>¿Por qué hacer una cuenta?
-            <br>
-            Registrate en nuestra plataforma!!
-            <br>
-            Cuando te registras en nuestro sitio, tu navegación y compras serán más faciles
-            <br>
-            Facturación rápida y sin errores
-            <br>
-            Envíos personalizados
-            <br>
-            Sugerencias especiales</p>
-          <a href="login.php" class="btn mt-4">Crear cuenta</a>
+      
+    <div class="container">
+      <div class="row">
+      <?php
+        include "assets/php/conexion.php";
+        $myconsulta = $conexion->query("select * from productos");
+        $filas = $myconsulta->num_rows;
+        if ($filas >= 1) {
+        while ($lafila = $myconsulta->fetch_assoc()) {
+      ?>
+          <div class="col-3">
+                <div class="card">
+                    <img height="300"
+                    title="<?php echo $lafila["nombre"]; ?>" 
+                    alt="<?php echo $lafila['nombre']; ?>"
+                    class="card-img-top" 
+                    src="<?php echo $lafila['imagen']; ?>"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="<?php echo $lafila['descripcion']; ?>"
+                    >
+                    <div class="card-body">
+                        <span><?php echo $lafila['nombre']; ?></span>
+                        <h5 class="card-title">$<?php echo $lafila['precio_venta']; ?></h5>
+                        <!--<p class="card-text">Descripcion</p>-->
+                  
+                    <button class="btn btn-primary" 
+                        name="btnAccion" 
+                        value="agregar" 
+                        type="submit">Agregar al carrito</button>
+                    </form>
+                    </div>
+                </div>
           </div>
-          <div class="nosotros__imagen">
-            <img src="assets/img/conejos.jpg" alt="">
-          </div>
-        </section>
-        
-    </div>
+          <?php
+            } //fin del while
+        }
+        ?>
+        </div>
+    </div>     
+
         <footer>
           <div class="footer">
             <div class="mx-5 mt-5 grid">
@@ -186,9 +184,8 @@
                   <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
                 </div>
                
-              </div>
-              
-              <div class="terminos mt-4 ">
+                </div>
+            <div class="terminos mt-4 ">
             <a href="archivos/condiciones_compra.pdf" > <p class="footer-enlaces mb-4">Condiciones de compra y verificación </p> </a>
             <a href="archivos/politicas_de_privacidad.pdf" class="footer-enlaces mb-5"> <p class="footer-enlaces"> Aviso legal y
                 políticas de privacidad</p></a>
@@ -199,6 +196,11 @@
         </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
+    <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            });
+    </script>
+               
   </body>
 </html>
