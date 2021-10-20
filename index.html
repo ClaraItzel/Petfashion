@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        alert('El usuario fue registrado exitosamente');
-        location.href="login.php"
-    </script>
+    <div class="overlay">
+        <div class="popup container">
+            <a href="#" id="btn_cerrar" class="cerrar_popup"><img src="/assets/img/boton-cerrar.png" alt=""></a>
+            <h3>Modulo de cambios</h3>
+            <p>Aquí puedes actualizar tu información</p>
+            <div class="contenedor-inputs">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Primer Apellido">
+                <input type="text" placeholder="Segundo Apellido">
+                <input type="text" placeholder="Correo">
+                <input type="text" placeholder="Direccion">
+                <input type="text" placeholder="Telefono">
+                <input type="text" placeholder="RFC">
+                <input type="text" placeholder="Password">
+            </div>
+            <input type="submit" class="btn_submit" value="Actualizar">
+        </div>
+    </div>
 </body>
 </html>

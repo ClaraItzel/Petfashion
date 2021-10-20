@@ -1,3 +1,11 @@
+<?php
+    $conexion = mysqli_connect("localhost", "root", "", "petfashion");
+session_start();
+$correo= $_SESSION['usuario'];
+$sql= "SELECT * FROM usuarios where correo='$correo'";
+$result=$conexion->query($sql);
+
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -17,77 +25,13 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
     <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
     <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
     <title>PetsFasion</title>
   </head>
   <body>
-    <header>
-        <nav class="fixed-top navbar navbar-expand-sm navbar-dark bg-dark">
-        <img src="assets/img/huella.png" alt="" height="40px" style=" margin: 10px">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-       <!-- -Barra de Navegación (Inicio| Acerca de | Productos | Identidad |
-        Contacto  |  Condiciones de compra o contratación | Aviso legal y políticas de privacidad)
-        -Identidad (misión, visión, valores y objetivos)-->
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="index.php">PetsFashion <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="acercade.php">Sobre nosotros</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="catalogo.php">Tienda <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="identidad.html">Identidad <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="contacto.php">Contacto <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link mr-3" href="login.php">Inicio de sesión <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          
-        </div>
-        </nav>
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="slide1"></div>
-            <div class="carousel-caption d-md-block color flex">
-                <h1>Sea Bienvendio a PetsFashion</h1>
-                <p>¡Para dueños y mascotas felices! Tu mascota al último ladrido de la moda</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slide2"></div>
-            <div class="carousel-caption d-md-block color flex">
-                <h1>Sea Bienvendio a PetsFashion</h1>
-                <p>Dirigido a aquellas personas que les gusta consentir a sus animales</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slide3"></div>
-            <div class="carousel-caption  d-md-block color flex">
-                <h1>Sea Bienvendio a PetsFashion</h1>
-                <p>¡Para dueños y mascotas felices! Tu mascota al último ladrido de la moda</p>
-              </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon icono_carrusel" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-          <span class="carousel-control-next-icon icono_carrusel" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-  </header>
+  <?php
+  include("header.php")
+  ?>
     
     <div class="espacio" id="QuienesSomos">
 
@@ -110,15 +54,14 @@
             
         </section>
     </div>
-    
+  <img src="/petfashion(2)/assets/img/wave6.svg" alt="">
+  <div class="bg-verde">
     <div class="container" id="" >
-        <section class="mb-4">
-            <h2 class="center mt-2 mb-2" id="">Nuestra fundadora</h2> <br>
+        <section>
+            <h2 class="center mb-2" id="">Nuestra fundadora</h2> <br>
             <div class="nosotros">
-            <div class="nosotros__imagen">
-            <img src="assets/img/clara.jfif" alt="">
-            </div>
             <div class="text">
+              <div id="tienda"></div>
                 <h4>Clara Gómez</h4>
                 <p>Una persona comprometida con el trato digno de los animales y la tranquilidad de los dueños. <br>
                     Activista en pro de los derechos de los animales y su protección, el principal objetivo de la fundadora es 
@@ -129,12 +72,19 @@
                      el bienestar de nuestros pequeños peludos, si ellos se sienten bien, los dueños nos sentiremos seguros y en paz con 
                      nuestras especies. </p>
             </div>
+            <div class="nosotros__imagen">
+            <img src="/petfashion(2)/assets/img/clara.jfif" alt="">
+            </div>
             
         </section>
     </div>
+  </div>
+  <img src="/petfashion(2)/assets/img/wave5.svg" alt="">
+    
     <div class="container">
       <h2 class="center mt-2 mb-2" id="">Nuestros colaboradores</h2> <br>
       <div class="row">
+      <div class="grid-cards">
         <?php
           include "assets/php/conexion.php";
           $myconsulta = $conexion->query("select * from colaboradores");
@@ -142,12 +92,12 @@
           if ($filas >= 1) {
           while ($lafila = $myconsulta->fetch_assoc()) {
         ?>
-            <div class="col-4">
+            
                   <div class="card">
                       <img height="300"
                       title="<?php echo $lafila["nombre"]; ?>" 
                       alt="<?php echo $lafila['nombre']; ?>"
-                      class="card-img-top" 
+                      class="card-img-top contain" 
                       src="<?php echo $lafila['foto']; ?>"
                       >
                       <div class="card-body">
@@ -157,42 +107,24 @@
                       
                       </div>
                   </div>
-            </div>
+            
             <?php
               } //fin del while
           }
           ?>
+          </div>
       </div>
     </div>
       
-    <footer>
-        <div class="footer">
-        <div class="mx-5 mt-5 grid">
-            <div class="foot__imagen">
-            <img src="assets/img/huella.png" height="80px" alt="">
-            <h3 class="mt-4 ml-3 blanco">PetsFasion</h3>
-            </div>
-            <div class="redes">
-            <div class="redes__titulo center">
-                <h5 class="blanco">Síguenos en:</h5>
-            </div>
-            <div class="redes__imagenes">
-                <img src="assets/img/facebook.png" class="mr-4" height="40px" alt="">
-                <img src="assets/img/linkedin.png" class="mr-4" height="40px" alt="">
-                <img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
-                <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
-            </div>
-            </div>
-            
-            <div class="terminos mt-4 ">
-            <a href="archivos/condiciones_compra.pdf" > <p class="footer-enlaces mb-4">Condiciones de compra y verificación </p> </a>
-            <a href="archivos/politicas_de_privacidad.pdf" class="footer-enlaces mb-5"> <p class="footer-enlaces"> Aviso legal y
-                políticas de privacidad</p></a>
-            </div>
-            </div>
+<?php
+include("footer.php")
+?>
+ <!--Popup-->
         
-        </div>
-    </footer>
+ <?php
+include("actualizarperfil.php")
+?>
+ <script src="/assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 

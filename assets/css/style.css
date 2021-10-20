@@ -8,6 +8,9 @@
 
 
 }
+body{
+    transition: all 500ms ease-out;
+}
 html{
     box-sizing: border-box;
     font-size: 62.5%;
@@ -46,6 +49,21 @@ p{
     font-size: 2.3rem;
     font-weight: normal;
 }
+li{
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 5px;
+}
+@media(max-width:768px){
+    p{
+        font-size: 1.7rem;
+    }
+}
+@media(max-width:450px){
+    p{
+        font-size: 1.3rem;
+    }
+}
 .center{
     text-align: center;
 }
@@ -67,23 +85,29 @@ a:hover{
 .espacio{
     height: 80px;
 }
+.contain{
+    object-fit: contain;
+}
 /* Slider */
+.lista{
+    list-style: none;
+}
 .slide1{
-background-image: url(assets/img/s-1);
+background-image: url(/assets/img/s-1.jpg);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
 background-position: top center;
 }
 .slide2{
-background-image: url(assets/img/s-2.jpg);
+background-image: url(/assets/img/s-2.jpg);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
 background-position: top center;
 }
 .slide3{
-background-image: url(assets/img/s-3.jpg);
+background-image: url(/assets/img/s-3.jpg);
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
@@ -223,6 +247,11 @@ background-position: top center;
     display: flex;
     padding: 2rem;
 }
+@media(max-width:900px){
+    .foot__imagen{
+        justify-content: center;
+    }
+}
 .grid{
     display: flex;
     justify-content: space-between;
@@ -233,7 +262,7 @@ background-position: top center;
     justify-content: space-between;
     cursor: pointer;
 }
-@media(max-width:500px){
+@media(max-width:900px){
     .grid{
         display: flex;
         flex-direction: column;
@@ -264,8 +293,7 @@ transition: all 300ms;;
 }
 /*Login*/
 .body{
-    background-image: url(/assets/img/pexels-tina-nord-7324407.jpg);    
-    background-size: cover;
+    background-image: url(/assets/img/pexels-tina-nord-7324407.jpg);    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -301,7 +329,6 @@ transition: all 500ms;
 }
 .caja__trasera button{
     padding: 10px 40px;
-    border 2px solid #fff;
     background-color: transparent;
     font-size: 17px;
     font-weight: bold;
@@ -360,7 +387,6 @@ transition: all 500ms;
 }
 .contenedor__login-register form button{
     padding: 10px 40px;
-    border none;
     background-color: var(--plum);
     font-size: 17px;
     font-weight: bold;
@@ -413,5 +439,195 @@ transition: all 500ms;
     }
     .formulario__login{
         padding: 35px 15px !important;
+    }
+}
+.Qs{
+    display: flex;
+    justify-content: center;
+}
+.QS__titulo{
+    border-left: 15px var(--plum) solid;
+    width: 30%;
+}
+.Qs__span{
+    font-weight: bold;
+    font-size: 4rem;
+    color: var(--plum);
+    font-family: var(--fuenteHeadings);
+}
+@media (max-width:1148px) {
+    .QS__titulo{
+        width: 50%;
+    }
+}
+@media (max-width:500px) {
+    .QS__titulo{
+        width: 80%;
+    }
+}
+.Qs_card{
+    margin-top: 10px;
+    border: 2px var(--plum) dashed;
+}
+.Petempresa{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-image: url(/petfashion\(2\)/assets/img/perrocontraje.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: justify;
+    line-height: 1.2;
+}
+@media(max-width:900px){
+    .Petempresa{
+        background-position: 85% center;
+    }
+}
+.mision, .vision {
+    padding: 5rem 2rem;
+    color: #fff;
+}
+.mision{
+    background-color: #535353b0;
+}
+.vision{
+    background-color:  #94618ebe;
+}
+ul.conimagen {list-style-image:url("/assets/img/pata.png");
+
+    list-style-position:inside;}
+/*Tabla*/
+.bg-verde{
+    background-color: var(--Eggplant);
+}
+.margin-cero{
+    margin: 0;
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width:500px) {
+    .grid-2{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+.tabla{
+    margin-right: 10px;
+    border-radius: 20px;
+}
+.celda{
+    background-color: #fff;
+    border: 2px var(--grape) solid;
+    border-bottom: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.celda:last-of-type{
+    border-bottom: 2px var(--grape) solid;
+}
+.bg-morado{
+    background-color: var(--grape);
+    color: #fff;
+}
+/* facturacion */
+.campo__field{
+     width: 100%;
+    margin-top: 0.5rem;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+}
+.boton{
+    padding: 10px 40px;
+    background-color: var(--plum);
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    transition: all 300ms;
+    margin-top: 10px;
+}
+.boton:hover{
+    background-color: #fff;
+    color: var(--plum);
+}
+.formulario{
+    background-color: #e1e1e1;
+    padding: 2rem;
+    border-left: 5px var(--shadow) solid;
+    border-bottom: 5px var(--shadow) solid;
+    border-radius: 20px;
+}
+/* overlay */
+.overlay{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .3 ease all;
+   
+}
+.inactive{
+    visibility: hidden;
+}
+.active{
+    visibility: visible;
+}
+.contenedor-inputs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.w-60{
+    width: 20%;
+}
+@media (max-width:1100px) {
+    .w-60{
+        width: 40%;
+    }
+}
+@media (max-width:768px) {
+    .w-60{
+        width: 100%;
+    }
+    .contenedor-inputs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+.popup{
+    background-color: #dddddd;
+    box-shadow: 0px 0px 5px 0px var(--shadow);
+    border-radius: 3px;
+    padding: 20px;
+
+
+}
+.grid-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem
+}
+@media (max-width:768px) {
+    .grid-cards{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 5rem
     }
 }

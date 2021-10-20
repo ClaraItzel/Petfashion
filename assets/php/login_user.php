@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexion.php';
 
 $correo = $_POST["correo"];
@@ -8,6 +9,7 @@ $password_encriptada= MD5($password);
 $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios where correo='$correo' and password='$password_encriptada'");
 
 if (mysqli_num_rows($validar_login) > 0) {
+    $_SESSION['usuario']= $correo;
     header("location: ../../index.php");
     exit();
 }else{

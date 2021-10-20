@@ -13,7 +13,7 @@ $password = $_POST["password"];
 //Se encripto la contraseña 
 $password_encriptada= MD5($password);
 
-    $query="INSERT INTO usuarios(id,nombre, prim_ape, seg_ape,correo,direccion,telefono,rfc,password)
+    $query="INSERT INTO usuarios(id_usuario,nombre, prim_ape, seg_ape,correo,direccion,telefono,rfc,password)
             VALUES('','$nombre','$prim_ape','$seg_ape','$correo','$direccion','$telefono','$rfc','$password_encriptada')";
 
 //Verficar que el correo no este repetido en la BD
