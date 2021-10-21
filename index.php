@@ -22,10 +22,10 @@ $result=$conexion->query($sql);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
-    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
-    <link rel="preload" href="/petfashion(2)/assets/img/s-1.jpg" as="image">
-    <title>PetsFasion</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" href="petfashion/assets/img/s-1.jpg" as="image">
+    <title>PetsFashion</title>
   </head>
   <body>
 
@@ -41,7 +41,7 @@ $result=$conexion->query($sql);
         <h2 class="center mt-2 mb-2" id="QuienesSomos">¿Quienes somos?</h2>
         <div class="nosotros">
           <div class="nosotros__imagen">
-            <img src="/assets/img/cat-g71bc39663_1280.png" alt="">
+            <img src="assets/img/cat-g71bc39663_1280.png" alt="">
           </div>
           <div class="text">
       
@@ -53,7 +53,7 @@ $result=$conexion->query($sql);
         
       </section>
         </div>
-        <img src="/assets/img/wave.svg" id="tienda" alt="">
+        <img src="assets/img/wave.svg" id="tienda" alt="">
         <section >
         <div class="articulos" id="tienda">
           <h2 class="center titulo mb-4">Compra por categorias</h2>
@@ -87,7 +87,7 @@ $result=$conexion->query($sql);
           </div>
           </div>
         </div>
-        <img src="/assets/img/wave2.svg" alt="">
+        <img src="assets/img/wave2.svg" alt="">
       </section>
         <section class="container nosotros cuenta mb-4">
           <div >
@@ -115,7 +115,7 @@ $result=$conexion->query($sql);
                     ?>
           </div>
           <div class="nosotros__imagen">
-            <img src="/assets/img/conejos.jpg" alt="">
+            <img src="assets/img/conejos.jpg" alt="">
           </div>
         </section>
         
@@ -126,7 +126,7 @@ $result=$conexion->query($sql);
         <?php
         include("actualizarperfil.php")
         ?>
-        <script src="/assets/js/emergente.js"></script>
+        <script src="assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 

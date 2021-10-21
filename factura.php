@@ -22,16 +22,16 @@ $result=$conexion->query($sql);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
-    <link type="text/css" rel="stylesheet" href="../assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preload" href="/assets/img/s-1.jpg" as="image">
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link rel="preload" href="assets/img/s-1.jpg" as="image">
     <title>PetsFasion</title>
   </head>
   <body>
 
   <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <img class="mr-3" src="/assets/img/huella.png" height="40px" alt="">
+  <img class="mr-3" src="assets/img/huella.png" height="40px" alt="">
   <a class="navbar-brand letra" href="index.php"> <h3> Petfashion </h3> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -39,18 +39,21 @@ $result=$conexion->query($sql);
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link enlances-nav" href="#QuienesSomos">Identidad</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link enlances-nav" href="#">Tienda</a>
-      </li>
-      <li class="nav-item enlances-nav">
-        <a class="nav-link" href="#">Contacto</a>
-      </li>
-      <li class="nav-item enlances-nav">
-        <a class="nav-link" href="#">A cerca de</a>
-      </li>
+    <li class="nav-item active">
+      <a class="nav-link mr-3" href="acercade.php">Sobre nosotros</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link mr-3" href="catalogo.php">Tienda <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link mr-3" href="identidad.html">Identidad <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link mr-3" href="contacto.php">Contacto <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link mr-3" href="login.php">Inicio de sesión <span class="sr-only">(current)</span></a>
+    </li>
     </ul>
     <form class="form-inline my-2 my-md-0">
 
@@ -249,7 +252,7 @@ $result=$conexion->query($sql);
           <div class="footer">
             <div class="mx-5 mt-5 grid">
               <div class="foot__imagen">
-                <img src="/assets/img/huella.png" height="80px" alt="">
+                <img src="assets/img/huella.png" height="80px" alt="">
                 <h3 class="mt-4 ml-3 blanco">PetFasion</h3>
               </div>
               <div class="redes">
@@ -257,10 +260,10 @@ $result=$conexion->query($sql);
                   <h5 class="blanco">Síguenos en:</h5>
                 </div>
                 <div class="redes__imagenes">
-                  <img src="/assets/img/facebook.png" class="mr-4" height="40px" alt="">
-                  <img src="/assets/img/linkedin.png" class="mr-4" height="40px" alt="">
-                  <img src="/assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
-                  <img src="/assets/img/instagram.png"  class="mr-4" height="40px" alt="">
+                  <img src="assets/img/facebook.png" class="mr-4" height="40px" alt="">
+                  <img src="assets/img/linkedin.png" class="mr-4" height="40px" alt="">
+                  <img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
+                  <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
                 </div>
                
               </div>
@@ -277,7 +280,7 @@ $result=$conexion->query($sql);
         
         <div class="overlay inactive mt-5" id="overlay">
         <div class="popup container" id="overpop">
-            <a href="#" id="btn_cerrar" class="cerrar_popup"><img src="/assets/img/boton-cerrar.png" alt=""></a>
+            <a href="#" id="btn_cerrar" class="cerrar_popup"><img src="assets/img/boton-cerrar.png" alt=""></a>
             <h3 class="center">Modulo de cambios</h3>
             <p class="center">Aquí puedes actualizar tu información</p>
             <form action="modulosCambios.php" class="form-overlay" method="POST">
@@ -339,7 +342,7 @@ $result=$conexion->query($sql);
             </div>
             
         </div>
-        <script src="/assets/js/emergente.js"></script>
+        <script src="assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 

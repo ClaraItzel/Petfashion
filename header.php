@@ -1,26 +1,28 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <img class="mr-3" src="/assets/img/huella.png" height="40px" alt="">
-  <a class="navbar-brand letra" href="index.php"> <h3> Petfashion </h3> </a>
+  <a class="navbar-brand letra" href="index.php"> <h3> Petsfashion </h3> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link enlances-nav" href="contacto.php">Identidad</a>
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="acercade.php">Sobre nosotros</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link enlances-nav" href="#">Tienda</a>
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="catalogo.php">Tienda <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item enlances-nav">
-        <a class="nav-link" href="#">Contacto</a>
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="identidad.html">Identidad <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item enlances-nav">
-        <a class="nav-link" href="acercade.php">A cerca de</a>
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="contacto.php">Contacto <span class="sr-only">(current)</span></a>
       </li>
-
+      <li class="nav-item active">
+        <a class="nav-link mr-3" href="login.php">Inicio de sesión <span class="sr-only">(current)</span></a>
+      </li>
      
     </ul>
     <form class="form-inline my-2 my-md-0">
@@ -37,7 +39,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item enlances-nav" id="popup" href="#tienda">Modificar Perfil</a>
           <a class="dropdown-item enlances-nav" href="#">Carrito</a>
-          <a class="dropdown-item enlances-nav" href="#">Mis facturas</a>
+          <a class="dropdown-item enlances-nav" href="factura.php">Mis facturas</a>
           <a class="dropdown-item enlances-nav" href="cerrarSesion.php">Cerrar Sesión</a>
         </div>
       </li>

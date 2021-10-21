@@ -22,10 +22,10 @@ $result=$conexion->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
     
-    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
     <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="petfashion/assets/css/style.css">
     <title>PetsFasion</title>
   </head>
   <body>
@@ -54,7 +54,7 @@ $result=$conexion->query($sql);
             
         </section>
     </div>
-  <img src="/petfashion(2)/assets/img/wave6.svg" alt="">
+  <img src="petfashion/assets/img/wave6.svg" alt="">
   <div class="bg-verde">
     <div class="container" id="" >
         <section>
@@ -73,13 +73,13 @@ $result=$conexion->query($sql);
                      nuestras especies. </p>
             </div>
             <div class="nosotros__imagen">
-            <img src="/petfashion(2)/assets/img/clara.jfif" alt="">
+            <img src="assets/img/clara.jfif" alt="">
             </div>
             
         </section>
     </div>
   </div>
-  <img src="/petfashion(2)/assets/img/wave5.svg" alt="">
+  <img src="petfashion/assets/img/wave5.svg" alt="">
     
     <div class="container">
       <h2 class="center mt-2 mb-2" id="">Nuestros colaboradores</h2> <br>
@@ -124,7 +124,7 @@ include("footer.php")
  <?php
 include("actualizarperfil.php")
 ?>
- <script src="/assets/js/emergente.js"></script>
+ <script src="assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
