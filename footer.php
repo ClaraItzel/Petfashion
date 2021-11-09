@@ -10,10 +10,10 @@
                 <h5 class="blanco">Síguenos en:</h5>
             </div>
             <div class="redes__imagenes">
-                <img src="assets/img/facebook.png" class="mr-4" height="40px" alt="">
-                <img src="assets/img/linkedin.png" class="mr-4" height="40px" alt="">
-                <img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt="">
-                <img src="assets/img/instagram.png"  class="mr-4" height="40px" alt="">
+               <a href="https://www.facebook.com/ " target="_blank"><img src="assets/img/facebook.png" class="mr-4" height="40px" alt=""></a>
+               <a href="https://www.linkedin.com/login/es" target="_blank"><img src="assets/img/linkedin.png" class="mr-4" height="40px" alt=""></a>
+               <a href="https://web.whatsapp.com/" target="_blank"><img src="assets/img/whatsapp.png"  class="mr-4" height="40px" alt=""></a>
+               <a href="https://www.instagram.com/" target="_blank"><img src="assets/img/instagram.png"  class="mr-4" height="40px" alt=""></a>
             </div>
             </div>
             

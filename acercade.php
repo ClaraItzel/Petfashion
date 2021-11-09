@@ -22,10 +22,10 @@ $result=$conexion->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
     
-    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
     <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <title>PetsFasion</title>
   </head>
   <body>
@@ -62,13 +62,13 @@ $result=$conexion->query($sql);
               <div class="ubi__texto blanco">
           <h3>Ubicación</h3>
             <p><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#24041d" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <line x1="18" y1="6" x2="18" y2="6.01" />
-  <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
-  <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
-  <line x1="9" y1="4" x2="9" y2="17" />
-  <line x1="15" y1="15" x2="15" y2="20" />
-</svg>Av De Los Reyes Mz 7 Lt 3, Santa Rosa de Lima, 54740 Cuautitlán Izcalli, Méx.</p>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="18" y1="6" x2="18" y2="6.01" />
+          <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+          <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+          <line x1="9" y1="4" x2="9" y2="17" />
+          <line x1="15" y1="15" x2="15" y2="20" />
+          </svg>Av De Los Reyes Mz 7 Lt 3, Santa Rosa de Lima, 54740 Cuautitlán Izcalli, Méx.</p>
           <h5>¿Por qué la ubicación?</h5>
           <p>
              La ubicación se eligió con base en que ahí está una de las escuelas más grandes de Veterinaria, lo cual procura potenciales clientes que quieran elegir nuestros artículos por la cercanía y gran variedad de productos. Destacando de que ahí mismo el municipio tiene más del 50% de su población construida por jóvenes, que son nuestro principal público.
@@ -78,14 +78,13 @@ $result=$conexion->query($sql);
             </div>
         
         </div>
-      </div>
-          
-            
-        </section>
+      </div>        
+    </section>
+    
         <h2 class="center">Fundadores</h2>
         <div class="Creadoras container">
           <div class="imagen-C p-5">
-          <img src="/assets/img/gato-con-personas-min.jpg" alt="">
+          <img src="assets/img/gato-con-personas-min.jpg" alt="">
             </div>
           <div class="Clara">
             
@@ -104,10 +103,10 @@ $result=$conexion->query($sql);
             
           </div>
           <div class="imagen-L p-5">
-            <img src="/assets/img/15574878807141.jpg" alt="">
+            <img src="assets/img/15574878807141.jpg" alt="">
             </div>
         </div>
-  <img src="/petfashion(2)/assets/img/wave6.svg" alt="">
+  <img src="assets/img/wave6.svg" alt="">
   <div class="bg-verde">
     <div class="container" id="" >
         <section>
@@ -123,7 +122,7 @@ $result=$conexion->query($sql);
                 </p>
             </div>
             <div class="nosotros__imagen">
-            <img src="/petfashion(2)/assets/img/clara.jfif" alt="">
+            <img src="assets/img/clara.jfif" alt="">
             </div>
             
 
@@ -131,7 +130,7 @@ $result=$conexion->query($sql);
         </section>
     </div>
   </div>
-  <img src="/petfashion(2)/assets/img/wave5.svg" alt="">
+  <img src="assets/img/wave5.svg" alt="">
     
     <div class="container">
       <h2 class="center mt-2 mb-2" id="">Nuestros colaboradores</h2> <br>
@@ -228,6 +227,56 @@ $result=$conexion->query($sql);
           </div>
             
     </section>
+
+    <!--Testimonial desde BD-->
+    <section class="testimonial text-center mt-4">
+       <div class="back-slider"> 
+         <div class="container pb-5">
+         <div class="heading white-heading">
+                <h2>Testimonial</h2>
+            </div>
+            <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
+             
+                
+                <?php
+                  include "assets/php/conexion.php";
+                  $myconsulta = $conexion->query("Select u.nombre, u.prim_ape, u.seg_ape, u.direccion, e.descripcion, e.fecha FROM usuarios AS u, experiencias AS e
+                  WHERE e.id_usuario =u.id_usuario");
+                  $filas = $myconsulta->num_rows;
+                 // if ($filas >= 1) {
+                  while ($lafila = $myconsulta->fetch_assoc()) {
+                ?>
+                  
+            <?php
+              } //fin del while
+         // }
+          ?>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="testimonial4_slide">
+                            <img class="cover" src="https://thumbs.vienna.at/?url=https://www.vienna.at/2012/07/jasonsegal_epa.jpg&w=428&h=321&crop=1" class="img-circle img-responsive" />
+                            <p><?php echo $lafila["descripcion"]; ?></p>
+                            <p><strong>DIRECCION Y FECHA</strong></p>
+                            <h5><?php echo $lafila["nombre"]; ?></h5>
+                        </div>
+                    </div>
+                </div>
+                   
+                <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#testimonial4" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+
+        </div>
+            
+    </section>
+
+    <!--Testimonial desde BD FIN-->
 <?php
 include("footer.php")
 ?>
@@ -236,7 +285,7 @@ include("footer.php")
  <?php
 include("actualizarperfil.php")
 ?>
- <script src="/assets/js/emergente.js"></script>
+ <script src="assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
