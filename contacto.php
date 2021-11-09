@@ -20,8 +20,8 @@ $result=$conexion->query($sql);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="petfashion/assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
     <title>PetsFasion</title>
 </head>
 <body>
@@ -75,7 +75,7 @@ include("header.php")
                 </li>   
             </ul>
           </section>
-          <img src="assets/img/wave3.svg" alt="">
+          <img src="/assets/img/wave3.svg" alt="">
           <div class="bg-verde">
             <div class="container bg-verde">
               <h1 class="margin-cero center mb-4">Objetivos</h1>
@@ -99,7 +99,7 @@ include("header.php")
               
             </div>
           </div>
-          <img src="assets/img/wave4.svg" alt="">
+          <img src="/assets/img/wave4.svg" alt="">
           <?php
 include("footer.php");
 ?>
@@ -108,7 +108,7 @@ include("footer.php");
  <?php
 include("actualizarperfil.php")
 ?>
-        <script src="assets/js/emergente.js"></script>
+        <script src="/assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>

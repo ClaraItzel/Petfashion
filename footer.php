@@ -1,6 +1,6 @@
 <footer>
         <div class="footer">
-        <div class="mx-5 mt-5 grid">
+        <div class="mx-5 grid">
             <div class="foot__imagen">
             <img src="assets/img/huella.png" height="80px" alt="">
             <h3 class="mt-4 ml-3 blanco">PetsFasion</h3>
