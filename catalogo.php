@@ -1,5 +1,5 @@
 <?php
-    $conexion = mysqli_connect("localhost", "root", "", "petfashion");
+    $conexion = mysqli_connect("localhost", "root", "", "npetfashion");
 session_start();
 $correo= $_SESSION['usuario'];
 $sql= "SELECT * FROM usuarios where correo='$correo'";

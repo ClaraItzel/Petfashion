@@ -1,18 +1,16 @@
 <?php
+$conexion = mysqli_connect("localhost", "root", "", "npetfashion");
 
-$nombre= $_Post["nombre"];
-$prim_ape = $_Post["prim_ape"];
-$seg_ape = $_Post["seg_ape"];
-$correo = $_Post["correo"];
-$telefono = $_Post["telefono"];
-$mensaje = $_Post["mensaje"];
+$Nombre = $_POST["Nombre"];
+$prim_ape = $_POST["prim_ape"];
+$seg_ape = $_POST["seg_ape"];
+$correo = $_POST["correo"];
+$telefono = $_POST["telefono"];
+$mensaje = $_POST["mensaje"]; 
 
-   //$contenido = "Nombre: " . $nombre . "\nEmail: " . $email . "\nTelefono: " . $telefono . "\nMensaje: " . $mensaje;
+$insertar= "INSERT INTO mensajes_contacto(nombre,prim_ape,seg_ape,correo,telefono,mensaje)
+VALUES('$Nombre', '$prim_ape','$seg_ape','$correo','$telefono','$mensaje')";
 
-  $datos= $nombre.$prim_ape.$seg_ape.$correo.$telefono.$mensaje;
+$resultado= mysqli_query($conexion,$insertar);
 
-  if (datos($nombre, $prim_ape, $seg_ape, $correo, $telefono, $mensaje)) {
-    echo "<p style='font-size:20px;'>El formulario se ha enviado correctamente</p>";
- } else {
-    echo "Ha habido un error al enviar el formulario, inténtalo de nuevo por favor";
- }
+mysqli_close($conexion);

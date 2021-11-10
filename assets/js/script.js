@@ -1,3 +1,7 @@
+var xhr = new XMLHttpRequest();
+var form = DataForm();
+var data = document.getElementById('frm_envio');
+console.log(data);
 window.addEventListener('resize',anchoPagina);
 
 function anchoPagina() {

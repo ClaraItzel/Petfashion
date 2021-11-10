@@ -882,3 +882,17 @@ ul.conimagen {list-style-image:url("/assets/img/pata.png");
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+/* Contacto */
+.inputs__contacto{
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+.mensaje-bien{
+    background-color: #caff7b;
+    color: #88d317;
+    text-transform: uppercase;
+    text-align: center;
+}

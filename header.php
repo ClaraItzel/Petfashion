@@ -8,24 +8,20 @@
 
   <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="index.php">PetsFashion <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="acercade.php">Sobre nosotros</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="catalogo.php">Tienda <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="identidad.html">Identidad <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="contacto.php">Contacto <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link mr-3" href="login.php">Inicio de sesión <span class="sr-only">(current)</span></a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link enlances-nav" href="contacto.php">Sobre nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link enlances-nav" href="catalogo.php">Tienda</a>
+      </li>
+      <li class="nav-item enlances-nav">
+        <a class="nav-link" href="contacto2.php">Contacto</a>
+      </li>
+      <li class="nav-item enlances-nav">
+        <a class="nav-link" href="acercade.php">Identidad</a>
+      </li>
+
+     
     </ul>
     <form class="form-inline my-2 my-md-0">
 
