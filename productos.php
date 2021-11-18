@@ -119,6 +119,7 @@ $sql="SELECT * FROM productos WHERE id_producto ='".$Id_prod."'";
             </div>
             <div class="texto">
             <p class="mt-3 disponible">'.$disponible.'</p>
+            <input type="hidden" name="pr" value="'.$disponible.'" id="disponible">
             <img src="/petfashion(2)/assets/img/estrella(1).png" height="20px" alt="">
             <img src="/petfashion(2)//assets/img/estrella(1).png" height="20px" alt="">
             <img src="/petfashion(2)//assets/img/estrella(1).png"  height="20px" alt="">
@@ -134,17 +135,17 @@ $sql="SELECT * FROM productos WHERE id_producto ='".$Id_prod."'";
                 <h5 class="mr-5">Descripción</h5>
                 <p>'.$row["descripcion"].'</p>
                 <div class="cantidad">
-                <h4>Código de descuento</h4>
+                <h4 id="cod-titulo">Código de descuento</h4>
                 <form method="POST" id="frm_envio-prod" class="flex-prod formulario-codigo">
                     <input type="text" name="codigo" class="inputs__contacto" id="">
                     <button class="btn ml-3">Aplicar</button>
                     
                     
                 </form>
-                <div class="mensaje mt-3"></div>
+                <div class="mensaje my-3"></div>
                 <p class="mt-3"><strong>TOTAL</strong> <span class="precio" id="precioV">$'.$row["precio_venta"].'.00 </span> </p>
                 <input type="hidden" name="pr" value="'.$row["precio_venta"].'" id="precio">
-                <button class="boton w-80">Agregar al carrito</button>
+                <input type="button" class="boton w-80" id="AgrCarrito"  disabled="" value="Agregar a carrito" ></input>
                 <div class="mt-5">
                
                 Si te arrepentiste de comprar el producto o es diferente de lo que pediste:

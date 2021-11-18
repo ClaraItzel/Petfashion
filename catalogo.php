@@ -70,12 +70,12 @@ $result=$conexion->query($sql);
         <img src="assets/img/wave2.svg" alt="">
       
     <div class="container">
-    <div class="container">
-      <div class="buscador">
+    <div class="container" >
+      <div class="buscador" >
         <h3>¿Qué producto deseas?</h3>
-        <form action="" method="get">
-          <input type="text" name="busqueda" class="form-control"><br>
-          <input type="submit" name="enviar" value="Buscar"class="btn btn-primary">
+        <form  method="get" id="">
+          <input type="text" name="busqueda" class="form-control inputs__contacto"><br>
+          <input id="buscador" type="submit" href="#buscador" name="enviar"  value="Buscar"class="btn btn-primary">
         </form>
         <br><br>
         <?php
@@ -84,22 +84,34 @@ $result=$conexion->query($sql);
               $busqueda = $_GET['busqueda'];
               $myconsulta = $conexion->query("select * from productos where nombre like '%$busqueda%'");
                 while($lafila =  $myconsulta->fetch_assoc()){
+                  echo"<script>
+                  
+                      location.href='catalogo.php?busqueda=$busqueda&enviar=Buscar#buscador';
+                      var data2 = document.querySelector('#titulo');
+                      
+                      </script>
+                  ";
                   ?>
-                    <div class="col-4">
+                  
+                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6  clase">
                           <div class="card">
 
                               <?php echo $lafila["imagen"]; ?>
 
                               <div class="card-body">
-                                  <h5><span><?php echo $lafila['nombre']; ?></span></h5>
-                                  <?php echo $lafila['descripcion']; ?>
-                                  <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
+                                  <h5 class="center"><span><?php echo $lafila['nombre']; ?></span></h5>
+                                  
+                                  <p class="card-title center">$<?php echo $lafila['precio_venta']; ?></p>
                                   <!--<p class="card-text">Descripcion</p>-->
 
-                              <button class="btn btn-primary" 
-                                  name="btnAccion" 
-                                  value="agregar" 
-                                  type="submit">Agregar al carrito</button>
+                                  <form action="productos.php" class="alinear-centro" Method="POST">
+                      <img src="/petfashion(2)/assets/img/carro.png" class="mt-4 pointer" alt="" height="40px">
+                      <input type="hidden" name="Id_Prod" value="<?php echo $lafila['id_producto']; ?>">
+                    <button class="boton mq-60" 
+                        name="btnAccion" 
+                        value="agregar" 
+                        type="submit">Ver</button>
+                    </form>
                               </form>
                               </div>
                           </div>
@@ -112,8 +124,9 @@ $result=$conexion->query($sql);
       </div>
 
       <br>
-
+      <h3 class="center" id="titulo"></h3>
       <div class="row">
+       
       <?php
         include "assets/php/conexion.php";
         $myconsulta = $conexion->query("select * from productos");
@@ -121,7 +134,7 @@ $result=$conexion->query($sql);
         if ($filas >= 1) {
         while ($lafila = $myconsulta->fetch_assoc()) {
       ?>
-          <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6">
+          <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6 ">
                 <div class="card mb-3">
                     <?php echo $lafila['imagen']; ?>
                     

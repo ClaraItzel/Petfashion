@@ -1,10 +1,20 @@
+let x= document.querySelectorAll('.contain');
+
+x.forEach(x => {
+    x.classList.add('w-100');
+
+});
+
+
 var cantidad= document.querySelector('#prod_cantidad');
+disponibleFuncion();
 total(cantidad);
 //Declaración de variables para peticiones http
  var xhr = new XMLHttpRequest();//<-- este
 var data = document.getElementById('frm_envio-prod');
 var mensaje= document.querySelector('.mensaje');
 var prod_cantidad=document.querySelector('.prod_cantidad');
+
 data.addEventListener('submit', (ev) =>{ //evento submit en formulario
     var form = new FormData(data);//Se prepara la informacion del formulario
     xhr.open('POST','validarcodigo.php'); //aqui se llama el archivo de las intrucciones en php
@@ -45,11 +55,14 @@ data.addEventListener('submit', (ev) =>{ //evento submit en formulario
 }); 
 function descuentoF(descuento) {//funciones que no tienen que ver
     var cantidad= document.querySelector('#prod_cantidad').value;
+    var codtitulo= document.querySelector('#cod-titulo');
     var precio= document.querySelector('#precio').value
     var total=cantidad*precio;
     var x=document.querySelector('#precioV');
     var descuentoTotal= total - (total*descuento);
     x.textContent= `$${descuentoTotal}`
+    data.classList.add('desaparecer');
+    codtitulo.classList.add('desaparecer');
     
 }
 function total(cantidad) {
@@ -61,4 +74,19 @@ function total(cantidad) {
         precio=precioTotal;
         console.log(precio);
     })
+}
+function disponibleFuncion() {
+    var disponible=document.querySelector('#disponible');
+    var divsponible=document.querySelector('.disponible');
+    var irCarro=document.querySelector('#AgrCarrito');
+    if(disponible.value=="AGOTADO"){
+        divsponible.classList.add('disponible-a');
+        irCarro.disabled= true;
+        irCarro.enable=false;
+       console.log(irCarro)
+    }else{
+        divsponible.classList.add('disponible-b')
+        irCarro.disabled= false;
+        irCarro.enable=true;
+    }
 }
