@@ -91,6 +91,21 @@ a:hover{
 .cover{
     object-fit: cover;
 }
+.pt-8{
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+}
+.left{
+    text-align: left;
+}
+.w-80{
+    width: 60%;
+}
+@media(max-width:768px){
+    .w-80{
+        width: 100%;
+    }
+}
 /* Slider */
 .lista{
     list-style: none;
@@ -124,7 +139,9 @@ background-position: top center;
     height: 103%;
     background-color: #24041d9f;
 }
-
+.pointer{
+    cursor: pointer;
+}
 .resize{
     width: 0;
 }
@@ -231,6 +248,7 @@ background-position: top center;
     background-color: var(--Eggplant);
     border-radius: 30px;
     box-shadow: 5px 5px 5px rgb(189, 189, 189);
+    padding: 0 5px;
 }
 @media(max-width:768px){
     .btn{
@@ -895,4 +913,58 @@ ul.conimagen {list-style-image:url("/assets/img/pata.png");
     color: #88d317;
     text-transform: uppercase;
     text-align: center;
+}
+.alinear-centro{
+    display: flex;
+    justify-content: space-between;
+}
+.medida{
+    height: 280px;
+}
+/* Catalogo */
+.producto{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+@media(max-width:768px){
+    .producto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.flex-prod{
+    display: flex;
+    justify-content: space-evenly;
+}
+.mensaje-b{
+    background-color: #d3ff92;
+    color: #88d317;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+.mensaje-m{
+    background-color: #ff9292;
+    color: #d31717;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+.disponible{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.disponible-a{
+    color: red;
+}
+.disponible-b{
+    color: var(--Eggplant);
+}
+.linea{
+    text-decoration: line-through;
+}
+.nuevo-precio{
+    font-size: 2.5rem;
+    color: var(--Eggplant);
 }

@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "petfashion");
+    $conexion = mysqli_connect("localhost", "root", "", "petfashion");
 session_start();
 $correo= $_SESSION['usuario'];
 $sql= "SELECT * FROM usuarios where correo='$correo'";
@@ -23,9 +23,9 @@ $result=$conexion->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
     
-    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
+
     <title>PetsFasion</title>
   </head>
   <body>
@@ -69,7 +69,8 @@ $result=$conexion->query($sql);
         </div>
         <img src="assets/img/wave2.svg" alt="">
       
-      <div class="container">
+    <div class="container">
+    <div class="container">
       <div class="buscador">
         <h3>¿Qué producto deseas?</h3>
         <form action="" method="get">
@@ -86,7 +87,7 @@ $result=$conexion->query($sql);
                   ?>
                     <div class="col-4">
                           <div class="card">
-                              
+
                               <?php echo $lafila["imagen"]; ?>
 
                               <div class="card-body">
@@ -94,7 +95,7 @@ $result=$conexion->query($sql);
                                   <?php echo $lafila['descripcion']; ?>
                                   <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
                                   <!--<p class="card-text">Descripcion</p>-->
-                            
+
                               <button class="btn btn-primary" 
                                   name="btnAccion" 
                                   value="agregar" 
@@ -109,7 +110,7 @@ $result=$conexion->query($sql);
         ?>
 
       </div>
-      
+
       <br>
 
       <div class="row">
@@ -120,21 +121,26 @@ $result=$conexion->query($sql);
         if ($filas >= 1) {
         while ($lafila = $myconsulta->fetch_assoc()) {
       ?>
-          <div class="col-4">
-                <div class="card">
+          <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6">
+                <div class="card mb-3">
+                    <?php echo $lafila['imagen']; ?>
                     
-                    <?php echo $lafila["imagen"]; ?>
-
                     <div class="card-body">
-                        <h5><span><?php echo $lafila['nombre']; ?></span></h5>
-                        <?php echo $lafila['descripcion']; ?>
-                        <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
+                        <h5 class="center"><?php echo $lafila['nombre']; ?></h5>
+                        <p class="card-title center">$<?php echo $lafila['precio_venta']; ?></p>
                         <!--<p class="card-text">Descripcion</p>-->
-                  
-                    <button class="btn btn-primary" 
+                  <div >
+                    <form action="productos.php" class="alinear-centro" Method="POST">
+                      <img src="/petfashion(2)/assets/img/carro.png" class="mt-4 pointer" alt="" height="40px">
+                      <input type="hidden" name="Id_Prod" value="<?php echo $lafila['id_producto']; ?>">
+                    <button class="boton mq-60" 
                         name="btnAccion" 
                         value="agregar" 
-                        type="submit">Agregar al carrito</button>
+                        type="submit">Ver</button>
+                    </form>
+                    
+                  </div>
+                    
                     </form>
                     </div>
                 </div>
@@ -151,7 +157,8 @@ $result=$conexion->query($sql);
     <?php
   include("footer.php")
   ?>  
-    <script src="assets/js/emergente.js"></script>
+    <script src="/petfashion(2)/assets/js/tienda.js"></script>
+    <script src="/assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
@@ -159,6 +166,6 @@ $result=$conexion->query($sql);
                 $('[data-toggle="popover"]').popover()
             });
     </script>
-                 
+               
   </body>
 </html>

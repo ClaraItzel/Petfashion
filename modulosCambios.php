@@ -1,5 +1,5 @@
 <?php
-    $conexion = mysqli_connect("localhost", "root", "", "npetfashion");
+    $conexion = mysqli_connect("localhost", "root", "", "petfashion");
 $nombre = $_POST["nombre"];
 $prim_ape = $_POST["prim_ape"];
 $seg_ape = $_POST["seg_ape"];
