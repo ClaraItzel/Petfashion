@@ -22,9 +22,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
         <!--Css-->
-        <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
-        <link type="text/css" rel="stylesheet" href="/assets/css/style.css">
-        <link rel="preload" href="/assets/img/pexels-tina-nord-7324407.jpg" as="image">
+        <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+        <link rel="preload" href="assets/img/pexels-tina-nord-7324407.jpg" as="image">
         <title>PetsFasion</title>
       </head>
   <body class="body">
@@ -107,7 +107,7 @@
         </div>
 
     </main>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 

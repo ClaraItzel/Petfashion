@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2021 a las 08:37:46
+-- Tiempo de generación: 16-11-2021 a las 04:14:39
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -129,7 +129,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id_empresa`, `nombre`, `logo`, `rfc`, `direccion`, `slogan`, `num_contacto`, `cond_compra`, `aviso_legal`) VALUES
-(1, 'PetFashion', '/Petfashion/assets/img/logo.jpg', 'PETF150623A2S', 'Avenida Reforma 143, Colonia Bosques Ciudad de México', '“¡Para dueños y mascotas felices! Tu mascota al último ladrido de la moda”', '5522002121', '/petsfashion/archivos/condiciones_compra.pdf', '/petsfashion/archivos/politicas_de_privacidad.pdf');
+(1, 'PetFashion', '/Petfashion/logo.jpg', 'PETF150623A2S', 'Av De Los Reyes Mz 7 Lt 3, Santa Rosa de Lima, 54740 Cuautitlán Izcalli, Méx.', '“¡Para dueños y mascotas felices! Tu mascota al último ladrido de la moda”', '5522002121', '/petsfashion/archivos/condiciones_compra.pdf', '/petsfashion/archivos/politicas_de_privacidad.pdf');
 
 -- --------------------------------------------------------
 
@@ -143,6 +143,16 @@ CREATE TABLE `experiencias` (
   `descripcion` text DEFAULT NULL,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `experiencias`
+--
+
+INSERT INTO `experiencias` (`id_experiencia`, `id_usuario`, `descripcion`, `fecha`) VALUES
+(1, 5, 'He encontrado todos los productos que necesitaba gracias a ustedes, mi gato hoy está a la moda. compre un chaleco para el frío, ya que mi gato suele meterse en las cobijas y no salir, ahora con este producto en las noches frías está en cualquier lugar sin pasar frío, esta tienda garantiza calidad.', '2020-10-01'),
+(2, 6, 'El producto me llegó en excelentes condiciones, era justo lo que buscaba y el servicio de paquetería fue muy eficaz. Mi perro CornFleis necesitaba una correa duradera porque es un animal muy grande, había estado buscando en muchas tiendas, hasta que por fin encontré una que pueda aguantar el peso de mi mascota, muchas gracias.', '2021-06-30'),
+(3, 3, 'La calidad de la tela de la ropa es super buena y las medidas son adecuadas', '2020-06-30'),
+(4, 4, 'Las casas para perro adulto son de buen tamaño y no guardan olores tal como lo prometen, sin duda es una tienda confiable', '2021-03-17');
 
 -- --------------------------------------------------------
 
@@ -206,6 +216,29 @@ INSERT INTO `identidad` (`id_identidad`, `id_empresa`, `mision`, `vision`, `fund
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mensajes_contacto`
+--
+
+CREATE TABLE `mensajes_contacto` (
+  `id_mesaje` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `prim_ape` varchar(50) NOT NULL,
+  `seg_ape` varchar(50) NOT NULL,
+  `correo` varchar(60) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
+  `mensaje` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mensajes_contacto`
+--
+
+INSERT INTO `mensajes_contacto` (`id_mesaje`, `nombre`, `prim_ape`, `seg_ape`, `correo`, `telefono`, `mensaje`) VALUES
+(1, 'Lilia', 'Garcia ', 'Inclán', 'liliaginclan@gmail.com', '5522002121', 'Muy wena tienda');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `metodo_pago`
 --
 
@@ -263,24 +296,54 @@ CREATE TABLE `productos` (
   `descripcion` varchar(200) NOT NULL,
   `precio_compra` double NOT NULL,
   `precio_venta` double NOT NULL,
-  `imagen` varchar(100) NOT NULL,
-  `video` varchar(100) DEFAULT NULL
+  `imagen` text NOT NULL,
+  `video` varchar(100) DEFAULT NULL,
+  `disponibilidad` int(11) NOT NULL,
+  `devoluciones` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id_producto`, `id_categoria`, `nombre`, `descripcion`, `precio_compra`, `precio_venta`, `imagen`, `video`) VALUES
-(1, 1, 'Rompevientos Fiusha con Azul ', 'Rompevientos Fiusha con Azul para Perro, X-Grande\r\nIdeal para: Peso 20-30 kg, espalda 48-55 cm, Raza sugerida boxer', 60, 100, '/petfashion/rompevientos.jfif', NULL),
-(2, 1, 'Sudadera Azul-Gris', 'Sudadera Colorblock Azul-Gris, Mediano 42-46 cm', 350, 450, '/petfashion/sudadera.jfif', NULL),
-(3, 2, 'Disfraz de Rey para Gato', 'Disfraz de rey para Gato\r\nUnitalla\r\n', 60, 180, '/petfashion/reygato.jfif', NULL),
-(4, 2, 'Disfraz Vaquero para Gato', 'Disfraz de vaquero para gato \r\nUnitalla\r\nMulticolor', 70, 200, '/petfashion/vaquerogato.jfif', NULL),
-(5, 3, 'Zona de Juegos para Ave', 'Zona de Juegos para Ave \n15cm de largo * 15cm de ancho\nMadera natural pulida', 250, 400, '/petfashion/juegosave.jfif', NULL),
-(6, 3, 'Jaula para Aves', 'Jaula para Aves Modelo Niza Palace \r\n47cm x 36cm x 68cm * \r\nMetal conn base plastica y charola removible\r Para aves de ornato de tamaño pequeño', 900, 1800, '/petfashion/jaula.jpg', NULL),
-(7, 1, 'Casa para perro', 'Casa para perro, raza grande \r\nPolietileno moldeado con proteccion UV y antibacterial * \r\nDiseño ergonómico\r Resistentes a impactos, mordidas y cambios del clima', 1200, 2500, '/petfashion/casa_perro.png', NULL),
-(8, 1, 'Cama para perro', 'Cama para perro chico - mediano\r\nUnitalla\r\nMulticolor\r 50cm x 70 cm', 80, 220, '/petfashion/cama_colores.jpg', NULL),
-(9, 1, 'Lanza Pelotas Automático', 'Juguete automático para perro\r\nIdeal para interior y exterior\r\nVerde llamativo\r Funciona con baterias de litio\rDistancia de lanzamiento ajustable', 1400, 2400, '/petfashion/lanzapelotas.mp4g', NULL);
+INSERT INTO `productos` (`id_producto`, `id_categoria`, `nombre`, `descripcion`, `precio_compra`, `precio_venta`, `imagen`, `video`, `disponibilidad`, `devoluciones`) VALUES
+(1, 1, 'Rompevientos Fiusha con Azul ', 'Rompevientos Fiusha con Azul para Perro, X-Grande\r\nIdeal para: Peso 20-30 kg, espalda 48-55 cm, Raza sugerida boxer', 60, 100, '<img src=\"/petfashion/rompevientos.jfif\">', NULL, 0, ''),
+(2, 1, 'Sudadera Azul-Gris', 'Sudadera Colorblock Azul-Gris, Mediano 42-46 cm', 350, 450, '<img src=\"/petfashion/sudadera.jfif\">', NULL, 0, ''),
+(3, 2, 'Disfraz de Rey para Gato', 'Disfraz de rey para Gato\r\nUnitalla\r\n', 60, 180, '<img src=\"/petfashion/reygato.jfif\">', NULL, 0, ''),
+(4, 2, 'Disfraz Vaquero para Gato', 'Disfraz de vaquero para gato \r\nUnitalla\r\nMulticolor', 70, 200, '<img src=\"/petfashion/vaquerogato.jfif\">', NULL, 0, ''),
+(5, 3, 'Zona de Juegos para Ave', 'Zona de Juegos para Ave \n15cm de largo * 15cm de ancho\nMadera natural pulida', 250, 400, '<img src=\"/petfashion/juegosave.jfif\">', NULL, 0, ''),
+(6, 3, 'Jaula para Aves', 'Jaula para Aves Modelo Niza Palace \r\n47cm x 36cm x 68cm * \r\nMetal conn base plastica y charola removible\r Para aves de ornato de tamaño pequeño', 900, 1800, '<img src=\"/petfashion/jaula.jpg\">', NULL, 0, ''),
+(7, 1, 'Casa para perro', 'Casa para perro, raza grande \r\nPolietileno moldeado con proteccion UV y antibacterial * \r\nDiseño ergonómico\r Resistentes a impactos, mordidas y cambios del clima', 1200, 2500, '<img src=\"/petfashion/casa_perro.png\">', NULL, 0, ''),
+(8, 1, 'Cama para perro', 'Cama para perro chico - mediano\r\nUnitalla\r\nMulticolor\r 50cm x 70 cm', 80, 220, '<img src=\"/petfashion/cama_colores.jpg\">', NULL, 0, ''),
+(9, 1, 'Lanza Pelotas Automático', 'Juguete automático para perro\r\nIdeal para interior y exterior\r\nVerde llamativo\r Funciona con baterias de litio\rDistancia de lanzamiento ajustable', 1400, 2400, '<video src=\"lanzapelotas.mp4\" autoplay controls></video>', '<video src=\"lanzapelotas.mp4\" controls autoplay></video>', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `producto_valoracion`
+--
+
+CREATE TABLE `producto_valoracion` (
+  `id_valor` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `valoracion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `producto_valoracion`
+--
+
+INSERT INTO `producto_valoracion` (`id_valor`, `id_usuario`, `id_producto`, `valoracion`) VALUES
+(1, 3, 1, 'Las costuras de la prenda vienen bien reforzadas y es realmente impermeable, me sirvió mucho para dar un paseo a mi perro sin preocuparme por la lluvia'),
+(2, 4, 2, 'La sudadera es muy calientita, mi perro ya no sufre frio y se ve realmente fashion con ese bolsillo de la prenda, el gorrito le da mejor apariencia'),
+(3, 5, 3, 'Aunque la coronita la ocupa de juguete, mi gato se ve super cute con su capa de rey, me encanta que las correas del disfraz hacen que no se le desacomode'),
+(4, 6, 4, 'A mi gato le encanta su disfraz de vaquero, se le ajusta a su cuerpo y puede seguir luciendo su pelaje, realmente estoy satisfecha con esta compra'),
+(5, 3, 5, 'La zona de juegos es atractiva para mi canario, me gustaria que vendan un tamaño mas grande, pero por el momento esta es adecuada para mi cantarin'),
+(6, 4, 6, 'Esta jaula tiene un diseño mas bonito que las jaulas comunes, y adecuada para limpiar la suciedad'),
+(7, 5, 7, 'La casita es muy bonita y con un diseño original, mi perro la usa en tiempo de calor y de frio'),
+(8, 6, 8, 'Cama con bonito diseño y repelente al agua, me gusta que es facil lavarla'),
+(9, 3, 9, 'Es muy efectiva para cuando no puedo jugar con mi perro, me gusta que se pase un buen rato solito');
 
 -- --------------------------------------------------------
 
@@ -334,8 +397,19 @@ CREATE TABLE `usuarios` (
   `direccion` varchar(200) NOT NULL,
   `telefono` varchar(10) NOT NULL,
   `rfc` varchar(13) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(200) NOT NULL,
+  `foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `prim_ape`, `seg_ape`, `correo`, `direccion`, `telefono`, `rfc`, `password`, `foto`) VALUES
+(3, 'Lilia Guadalupe', 'Garcia ', 'Inclán', 'liliaginclan@gmail.com', 'Avenida Reforma', '5522002121', 'GAIL991106MMC', 'd41d8cd98f00b204e9800998ecf8427e', '/Petfashion/lilia.jpg'),
+(4, 'Herlinda', 'Inclan', 'Lazaro', 'herlinda@correo.com', 'Avenida Reforma', '5539075394', 'IALH720317MMC', 'd41d8cd98f00b204e9800998ecf8427e', '/Petfashion/herlinda.jpg'),
+(5, 'Monica', 'Arriaga', 'Diaz', 'monica@correo.com', 'Estado de México- Atizapán de Zaragoza.', '5522003232', 'AIDM680231MMC', 'e10adc3949ba59abbe56e057f20f883e', '/Petfashion/monica.jpg'),
+(6, 'Fabiola', 'Torreblanca', 'Jenkins', 'fabiola@correo.com', 'CDMX Av del trabajo', '5566998787', 'TOJF861121HAM', 'e10adc3949ba59abbe56e057f20f883e', '/Petfashion/fabiola.jpg');
 
 -- --------------------------------------------------------
 
@@ -437,6 +511,12 @@ ALTER TABLE `identidad`
   ADD KEY `id_empresa` (`id_empresa`);
 
 --
+-- Indices de la tabla `mensajes_contacto`
+--
+ALTER TABLE `mensajes_contacto`
+  ADD PRIMARY KEY (`id_mesaje`);
+
+--
 -- Indices de la tabla `metodo_pago`
 --
 ALTER TABLE `metodo_pago`
@@ -455,6 +535,14 @@ ALTER TABLE `objetivos`
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`),
   ADD KEY `id_categoria` (`id_categoria`);
+
+--
+-- Indices de la tabla `producto_valoracion`
+--
+ALTER TABLE `producto_valoracion`
+  ADD PRIMARY KEY (`id_valor`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_producto` (`id_producto`);
 
 --
 -- Indices de la tabla `promociones`
@@ -513,7 +601,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `experiencias`
 --
 ALTER TABLE `experiencias`
-  MODIFY `id_experiencia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_experiencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -526,6 +614,12 @@ ALTER TABLE `factura`
 --
 ALTER TABLE `forma_pago`
   MODIFY `id_forma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `mensajes_contacto`
+--
+ALTER TABLE `mensajes_contacto`
+  MODIFY `id_mesaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `metodo_pago`
@@ -555,7 +649,7 @@ ALTER TABLE `tipo_pago`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
@@ -614,6 +708,13 @@ ALTER TABLE `objetivos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`);
+
+--
+-- Filtros para la tabla `producto_valoracion`
+--
+ALTER TABLE `producto_valoracion`
+  ADD CONSTRAINT `producto_valoracion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `producto_valoracion_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`);
 
 --
 -- Filtros para la tabla `valores`

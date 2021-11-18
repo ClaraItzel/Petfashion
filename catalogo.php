@@ -1,5 +1,5 @@
 <?php
-    $conexion = mysqli_connect("localhost", "root", "", "npetfashion");
+$conexion = mysqli_connect("localhost", "root", "", "petfashion");
 session_start();
 $correo= $_SESSION['usuario'];
 $sql= "SELECT * FROM usuarios where correo='$correo'";
@@ -23,9 +23,9 @@ $result=$conexion->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,100;1,300;1,700&family=Lobster+Two:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet"> 
     <!--Css-->
     
-    <link type="text/css" rel="stylesheet" href="/assets/css/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/petfashion(2)/assets/css/style.css">
-
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>PetsFasion</title>
   </head>
   <body>
@@ -43,7 +43,7 @@ $result=$conexion->query($sql);
                 <div class="capa">
                   <h3 class="blanco">Perros</h3>
                   <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
+                  <a href="#perro">VER MÁS</a>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ $result=$conexion->query($sql);
                 <div class="capa">
                   <h3 class="blanco">Gatos</h3>
                   <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
+                  <a href="#gato">VER MÁS</a>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@ $result=$conexion->query($sql);
                 <div class="capa">
                   <h3 class="blanco">Otros</h3>
                   <p class="blanco">¡Encuentra los mejores precios y una gran variedad de productos!</p>
-                  <a href="#">VER MÁS</a>
+                  <a href="#otros">VER MÁS</a>
                 </div>
             </div>
           </div>
@@ -69,7 +69,49 @@ $result=$conexion->query($sql);
         </div>
         <img src="assets/img/wave2.svg" alt="">
       
-    <div class="container">
+      <div class="container">
+      <div class="buscador">
+        <h3>¿Qué producto deseas?</h3>
+        <form action="" method="get">
+          <input type="text" name="busqueda" class="form-control"><br>
+          <input type="submit" name="enviar" value="Buscar"class="btn btn-primary">
+        </form>
+        <br><br>
+        <?php
+          include "assets/php/conexion.php";
+            if(isset($_GET['enviar'])){
+              $busqueda = $_GET['busqueda'];
+              $myconsulta = $conexion->query("select * from productos where nombre like '%$busqueda%'");
+                while($lafila =  $myconsulta->fetch_assoc()){
+                  ?>
+                    <div class="col-4">
+                          <div class="card">
+                              
+                              <?php echo $lafila["imagen"]; ?>
+
+                              <div class="card-body">
+                                  <h5><span><?php echo $lafila['nombre']; ?></span></h5>
+                                  <?php echo $lafila['descripcion']; ?>
+                                  <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
+                                  <!--<p class="card-text">Descripcion</p>-->
+                            
+                              <button class="btn btn-primary" 
+                                  name="btnAccion" 
+                                  value="agregar" 
+                                  type="submit">Agregar al carrito</button>
+                              </form>
+                              </div>
+                          </div>
+                    </div>
+                    <?php
+                } //fin del while
+            }//fin del if
+        ?>
+
+      </div>
+      
+      <br>
+
       <div class="row">
       <?php
         include "assets/php/conexion.php";
@@ -80,17 +122,12 @@ $result=$conexion->query($sql);
       ?>
           <div class="col-4">
                 <div class="card">
-                    <img height="300"
-                    title="<?php echo $lafila["nombre"]; ?>" 
-                    alt="<?php echo $lafila['nombre']; ?>"
-                    class="card-img-top" 
-                    src="<?php echo $lafila['imagen']; ?>"
-                    data-toggle="popover"
-                    data-trigger="hover"
-                    data-content="<?php echo $lafila['descripcion']; ?>"
-                    >
+                    
+                    <?php echo $lafila["imagen"]; ?>
+
                     <div class="card-body">
                         <h5><span><?php echo $lafila['nombre']; ?></span></h5>
+                        <?php echo $lafila['descripcion']; ?>
                         <h6 class="card-title">$<?php echo $lafila['precio_venta']; ?></h6>
                         <!--<p class="card-text">Descripcion</p>-->
                   
@@ -114,7 +151,7 @@ $result=$conexion->query($sql);
     <?php
   include("footer.php")
   ?>  
-    <script src="/assets/js/emergente.js"></script>
+    <script src="assets/js/emergente.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
@@ -122,6 +159,6 @@ $result=$conexion->query($sql);
                 $('[data-toggle="popover"]').popover()
             });
     </script>
-               
+                 
   </body>
 </html>
