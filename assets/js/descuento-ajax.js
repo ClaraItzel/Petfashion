@@ -56,23 +56,28 @@ data.addEventListener('submit', (ev) =>{ //evento submit en formulario
 function descuentoF(descuento) {//funciones que no tienen que ver
     var cantidad= document.querySelector('#prod_cantidad').value;
     var codtitulo= document.querySelector('#cod-titulo');
-    var precio= document.querySelector('#precio').value
-    var total=cantidad*precio;
+    var precio= document.querySelector('#precio')
+    var total=cantidad*precio.value;
     var x=document.querySelector('#precioV');
     var descuentoTotal= total - (total*descuento);
     x.textContent= `$${descuentoTotal}`
+    precio.value=descuentoTotal
     data.classList.add('desaparecer');
     codtitulo.classList.add('desaparecer');
     
 }
 function total(cantidad) {
     cantidad.addEventListener('click', ()=> {
+        var prod_cantidadValor= document.querySelector('#prod_cantidadValor');
         var x=document.querySelector('#precioV');
-        var precio= document.querySelector('#precio').value
-        var precioTotal=cantidad.value*precio;
+        var precio= document.querySelector('#precio')
+        var precioUnico= document.querySelector('#precioUnico')
+        var precioTotal=cantidad.value*precioUnico.value;
         x.textContent=`$${precioTotal}.00`;
-        precio=precioTotal;
-        console.log(precio);
+        prod_cantidadValor.value=cantidad.value;
+        precio.value=precioTotal;
+       console.log(precio)
+ 
     })
 }
 function disponibleFuncion() {

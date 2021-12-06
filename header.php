@@ -36,7 +36,7 @@
         '</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item enlances-nav" id="popup" href="#tienda">Modificar Perfil</a>
-          <a class="dropdown-item enlances-nav" href="#">Carrito</a>
+          <a class="dropdown-item enlances-nav" href="mostrarCarro.php">Carrito</a>
           <a class="dropdown-item enlances-nav" href="factura.php">Mis facturas</a>
           <a class="dropdown-item enlances-nav" href="cerrarSesion.php">Cerrar Sesión</a>
         </div>

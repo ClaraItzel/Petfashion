@@ -65,7 +65,7 @@ $result=$conexion->query($sql);
         '</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item enlances-nav" id="popup" href="#tienda">Modificar Perfil</a>
-          <a class="dropdown-item enlances-nav" href="#">Carrito</a>
+          <a class="dropdown-item enlances-nav" href="mostrarCarro.php">Carrito</a>
           <a class="dropdown-item enlances-nav" href="factura.php">Mis facturas</a>
           <a class="dropdown-item enlances-nav" href="cerrarSesion.php">Cerrar Sesión</a>
         </div>
@@ -127,9 +127,11 @@ $sql="SELECT * FROM productos WHERE id_producto ='".$Id_prod."'";
             <img src="/petfashion(2)//assets/img/estrella(1).png"  height="20px" alt="">
             <div class="">
                     <p ><strong>$'.$row["precio_venta"].'.00</strong></p>
+                    <input type="hidden" name="pr" value="'.$row["precio_venta"].'" id="precioUnico">
                     <div class="cantidad flex-prod">
                         <h5 class="mr-5">Cantidad</h5>
                         <input type="number" name="cantidad" class="inputs__contacto" id="prod_cantidad" min="1" value="1">
+                        
                     </div>
                 </div>
                 <h5 class="mr-5">Descripción</h5>
@@ -144,8 +146,16 @@ $sql="SELECT * FROM productos WHERE id_producto ='".$Id_prod."'";
                 </form>
                 <div class="mensaje my-3"></div>
                 <p class="mt-3"><strong>TOTAL</strong> <span class="precio" id="precioV">$'.$row["precio_venta"].'.00 </span> </p>
+                
+                <form id="Carro" method="POST">
                 <input type="hidden" name="pr" value="'.$row["precio_venta"].'" id="precio">
-                <input type="button" class="boton w-80" id="AgrCarrito"  disabled="" value="Agregar a carrito" ></input>
+                <input type="hidden" name="descripcion" value="'.$row["descripcion"].'" >
+                <input type="hidden" name="id_producto" value="'.$Id_prod.'" >
+                <input type="hidden" name="cantidad" class="inputs__contacto" id="prod_cantidadValor" min="1" value="1">
+                
+                <button class="boton w-80" id="AgrCarrito" >Agregar al carrito</button>
+                </form>
+                <div class="mensaje"></div>
                 <div class="mt-5">
                
                 Si te arrepentiste de comprar el producto o es diferente de lo que pediste:
@@ -174,6 +184,7 @@ include("actualizarperfil.php");
 include("footer.php")
 ?>  
  <script src="/petfashion(2)/assets/js/descuento-ajax.js"></script> 
+ <script src="/petfashion(2)/assets/js/descripcion-ajax.js"></script> 
   <script src="/assets/js/emergente.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

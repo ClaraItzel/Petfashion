@@ -77,6 +77,9 @@ $result=$conexion->query($sql);
           <input type="text" name="busqueda" class="form-control inputs__contacto"><br>
           <input id="buscador" type="submit" href="#buscador" name="enviar"  value="Buscar"class="btn btn-primary">
         </form>
+        <div class="row mt-5">
+
+        
         <br><br>
         <?php
           include "assets/php/conexion.php";
@@ -84,27 +87,19 @@ $result=$conexion->query($sql);
               $busqueda = $_GET['busqueda'];
               $myconsulta = $conexion->query("select * from productos where nombre like '%$busqueda%'");
                 while($lafila =  $myconsulta->fetch_assoc()){
-                  echo"<script>
                   
-                      location.href='catalogo.php?busqueda=$busqueda&enviar=Buscar#buscador';
-                      var data2 = document.querySelector('#titulo');
-                      
-                      </script>
-                  ";
                   ?>
                   
-                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6  clase">
-                          <div class="card">
-
-                              <?php echo $lafila["imagen"]; ?>
-
-                              <div class="card-body">
-                                  <h5 class="center"><span><?php echo $lafila['nombre']; ?></span></h5>
-                                  
-                                  <p class="card-title center">$<?php echo $lafila['precio_venta']; ?></p>
-                                  <!--<p class="card-text">Descripcion</p>-->
-
-                                  <form action="productos.php" class="alinear-centro" Method="POST">
+                  <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6 clase">
+                <div class="card mb-3">
+                    <?php echo $lafila['imagen']; ?>
+                    
+                    <div class="card-body">
+                        <h5 class="center"><?php echo $lafila['nombre']; ?></h5>
+                        <p class="card-title center">$<?php echo $lafila['precio_venta']; ?></p>
+                        <!--<p class="card-text">Descripcion</p>-->
+                  <div >
+                    <form action="productos.php" class="alinear-centro" Method="POST">
                       <img src="/petfashion(2)/assets/img/carro.png" class="mt-4 pointer" alt="" height="40px">
                       <input type="hidden" name="Id_Prod" value="<?php echo $lafila['id_producto']; ?>">
                     <button class="boton mq-60" 
@@ -112,15 +107,27 @@ $result=$conexion->query($sql);
                         value="agregar" 
                         type="submit">Ver</button>
                     </form>
-                              </form>
-                              </div>
-                          </div>
+                    
+                  </div>
+                    
+                    </form>
                     </div>
+                </div>
+          </div>
+                    
                     <?php
-                } //fin del while
+                } 
+                echo"<script>
+                  
+                      location.href='catalogo.php?busqueda=$busqueda&enviar=Buscar#buscador';
+                      var data2 = document.querySelector('#titulo');
+                      
+                      </script>
+                  ";//fin del while
             }//fin del if
         ?>
-
+        
+          </div>
       </div>
 
       <br>

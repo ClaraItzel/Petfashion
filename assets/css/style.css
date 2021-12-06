@@ -8,6 +8,16 @@
 
 
 }
+input{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.5rem;
+}
+video{
+
+    width:100%;
+    max-width:300px;
+
+}
 body{
     transition: all 500ms ease-out;
 }
@@ -23,7 +33,7 @@ a{
     text-decoration: none;
     font-size: 2.3rem;
 }
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, h6{
     font-family: var(--fuenteHeadings);
     line-height: 1.2;
 }
@@ -41,6 +51,9 @@ h4{
 }
 h5{
     font-size: 2.5rem;
+}
+h6{
+    font-size: 2rem;
 }
 img{
     max-width: 100%;
@@ -98,12 +111,16 @@ a:hover{
 .left{
     text-align: left;
 }
+.right{
+    text-align: right;
+}
 .w-80{
     width: 60%;
 }
 .w-100{
     width: 100%!important;
 }
+
 @media(max-width:768px){
     .w-80{
         width: 100%;
@@ -111,6 +128,9 @@ a:hover{
     .w-100{
         width: 100%!important;
         height: 280px;
+    }
+    .w-100-2{
+        width: 100%
     }
 }
 /* Slider */
@@ -987,4 +1007,85 @@ ul.conimagen {list-style-image:url("/assets/img/pata.png");
 .nuevo-precio{
     font-size: 2.5rem;
     color: var(--Eggplant);
+}
+.gridCarro{
+    display: grid;
+    grid-template-columns: 15% 80%;
+    
+}
+@media(max-width:768px){
+    .gridCarro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+}
+.concepto{
+    margin-left: 15px;
+}
+.l-1{
+    font-size: 1.7rem;
+}
+.flexCarro{
+    display: flex;
+    justify-content: space-between;
+}
+.borrar{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--shadow);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 1rem;
+    
+}
+.borrar:hover{
+    
+    color: #fff;
+    background-color: #9e1010;
+    border-radius: 40%;
+    text-align: center;
+    border: .2rem #9e1010 solid;
+    padding: 5px;
+}
+
+.bordesCarro{
+    padding: 10px;
+    border-radius: 10px;
+}
+.bordesCarro:nth-child(2n+1){
+    background-color: #9c6d985e;
+}
+.flex-pagar{
+    display: flex;
+    justify-content: center;
+}
+.flex-elementos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+.flex-btn{
+    display: flex;
+    justify-content: center;
+}
+.linea{
+    border: 0.5px #7eb827 solid;
+}
+.CarroVacio{
+    height: 50vh;
+    color: var(--plum);
+    background-color: var(--grape);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_guardar{
+    background-color: transparent;
+    border: none;
 }
