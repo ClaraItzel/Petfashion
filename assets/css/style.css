@@ -1089,3 +1089,29 @@ ul.conimagen {list-style-image:url("/assets/img/pata.png");
     background-color: transparent;
     border: none;
 }
+.imagenesCarro{
+    max-width: 100%;
+}
+@media(max-width:786px){
+    .imagenesCarro{
+        max-width: 180px;
+    } 
+}
+.grid-gracias{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width:768px) {
+    .grid-gracias{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.gato-gracias{
+    background-image: url(/petfashion\(2\)/assets/img/gato.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+    height: 80px;
+
+}

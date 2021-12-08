@@ -177,7 +177,8 @@ if ($result===false) {
 
     </div>
     <img src="/petfashion(2)/assets/img/wave6.svg" alt="">
-    <div class="bg-verde">
+    <form action="pagar(1).php" method="GET">
+      <div class="bg-verde">
           <div class="container">
      <h4 class="center">Resumen</h4> 
     </div>
@@ -200,7 +201,7 @@ if ($result===false) {
       <div class="flex-pagar">
         <h5>Total</h5>
       <p class="totalPagar ml-2"></p> 
-       <input type="hidden" class='precioOculto' name=""> 
+       <input type="hidden" class='precioOculto' name="precioOculto"> 
       </div>
       </div>
       <hr class="linea">
@@ -210,6 +211,8 @@ if ($result===false) {
       </div>
     </div>
 
+    </form>
+    
       <img src="/petfashion(2)/assets/img/wave5.svg" alt="">       
 
 </body>

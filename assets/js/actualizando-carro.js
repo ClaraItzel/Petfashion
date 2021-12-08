@@ -1,3 +1,7 @@
+let xls= document.querySelectorAll('.contain');
+xls.forEach(ls => {
+    ls.classList.add('imagenesCarro');
+});
 var xhr = new XMLHttpRequest();
 var dataplus = document.querySelectorAll('.frm_actualizar');
 var n_carro= document.querySelectorAll('.id_carro');
